@@ -1,6 +1,6 @@
 # SQLAlchemy - Surfs Up!
 
-# Initial Commit 
+## Initial Commit 
 
 ## Step 1 - Climate Analysis and Exploration
 
