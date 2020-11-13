@@ -48,9 +48,13 @@ def precipitation():
 	# Create a session (link) from Python to the DB
 	session = Session(engine)
 
-	# Query for precipitation by date
+	# Query for last year date endpoint
+	query_date = dt.date(2017, 8, 23) - dt.timedelta(days=365)
+
+	# Query for precipitation by date (for the last year of data)
 	results = session.query(Measurement.date, Measurement.prcp).\
-	order_by(Measurement.date).all()
+    filter(Measurement.date >= query_date).\
+    order_by(Measurement.date).all()
 
 	session.close()
 
